@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/login_style.css" />
+    <title>vanilaSchedule</title>
+</head>
+
+<body>
+    <div class="wrapper fadeInDown">
+        <div id="formContent">
+            <!-- Tabs Titles -->
+            <h2 class="active" id="signIn_h2" onclick="changeSignIn()"> Sign In </h2>
+            <h2 class="inactive underlineHover" id="signUp_h2" onclick="changeSignUp()">Sign Up </h2>
+
+            <!-- Sign in Form -->
+            <form id="signInForm" method="post" style="margin:30px;">
+                <input type="text" id="signIn_email" name="signIn_email" class="fadeIn second" placeholder="Email">
+                <input type="text" id="signIn_password" name="signIn_password" class="fadeIn third" placeholder="Password">
+                <input id="signIn_Button" style="margin:30px;" type="submit" class="fadeIn fourth" value="Sign In" formaction="/login/signin">
+            </form>
+
+            <!-- Sign up Form -->
+            <form id="signUpForm" method="post" style="margin:30px; display:none">
+                <!-- input은 name 을 지정해줘야 post로 값이 전달된다 -->
+                <input type="text" id="signUp_email" name="signUp_email" style="display:inline;" class="fadeIn second" placeholder="Email">
+                <input type="text" id="signUp_password" name="signUp_password" class="fadeIn third" placeholder="Password">
+                <input id="signUn_Button" style="margin:30px; width:240px;" type="submit" class="fadeIn fourth" value="Sign Up" formaction="/login/signup">
+                <hr style="width:95%"></hr>
+                <div id="other_signUp">
+                    <div style="margin-top:30px;">
+                        <img src="../img/naver_icon.png"></img>
+                        <input id="naver_Button" type="button" class="fadeIn fourth" value="Naver">
+                    </div>
+                    <div>
+                        <img src="../img/facebook_icon.png"></img>
+                        <input id="facebook_Button" type="button" class="fadeIn fourth" value="Facebook">
+                    </div>
+                </div>
+            </form>
+
+            <!-- Remind Passowrd -->
+            <div id="formFooter">
+                <a class="underlineHover" href="#">Forgot Password?</a>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/login_js.js"></script>
+</body>
