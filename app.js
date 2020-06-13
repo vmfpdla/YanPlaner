@@ -39,6 +39,8 @@ app.use(expressSession({
 var indexRouter = require('./routes/index');
 var clockRouter = require('./routes/clock');
 var loginRouter = require('./routes/login');
+var mypageRouter = require('./routes/mypage');
+
 //request 요청 URL과 처리 로직을 선언한 라우팅 모듈 매핑
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -47,3 +49,4 @@ app.use(bodyParser.json());
 app.use('/', indexRouter);
 app.use('/clock', clockRouter);
 app.use('/login', loginRouter);
+app.use('/mypage', mypageRouter);

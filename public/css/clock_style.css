@@ -1,256 +1,272 @@
 @import url('https://fonts.googleapis.com/css?family=Titan+One');
 .header {
-  display: flex;
+    display: flex;
 }
 
 .header h1 {
-  margin-left: 50px;
+    margin-left: 50px;
 }
 
 .header button {
-  /* 기본스타일을 초기화 시켜주는 방법 */
-  all: unset;
-  cursor: pointer;
-  background-color: none;
-  /* padding 은 시계방향으로 돈다 : 12 3 6 9  */
-  /* 상하좌우가 같으면 그냥 상하/ 좌우 두개만 쓴다. */
-  margin-left: auto;
-  margin-right: 50px;
-  text-align: center;
-  color: black;
-  font-weight: 800;
-  font-size: 16px;
+    /* 기본스타일을 초기화 시켜주는 방법 */
+    all: unset;
+    cursor: pointer;
+    background-color: none;
+    /* padding 은 시계방향으로 돈다 : 12 3 6 9  */
+    /* 상하좌우가 같으면 그냥 상하/ 좌우 두개만 쓴다. */
+    margin-left: auto;
+    margin-right: 50px;
+    text-align: center;
+    color: black;
+    font-weight: 800;
+    font-size: 16px;
 }
 
 .header button:active {
-  transform: scale(0.98);
-  text-decoration: underline;
+    transform: scale(0.98);
+    text-decoration: underline;
 }
 
-#clock {
-  display: flex;
-  margin-top: 50px;
-  justify-content: center;
-  align-items: center;
+.clock {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
 }
 
-.trigger{
-  background: #2bc0e4;
-  border: none;
-  color: white;
-  width:50px;
-  height:50px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  text-transform: uppercase;
-  font-size: 50px;
-  -webkit-box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  box-shadow: 0 10px 30px 0 rgba(95,186,233,0.4);
-  -webkit-border-radius: 5px 5px 5px 5px;
-  border-radius: 5px 5px 5px 5px;
-  -webkit-transition: all 0.3s ease-in-out;
-  -moz-transition: all 0.3s ease-in-out;
-  -ms-transition: all 0.3s ease-in-out;
-  -o-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  margin-bottom: 50px;
-  margin-left: 600px;
+.trigger {
+    background: #2bc0e4;
+    border: none;
+    color: white;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 50px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 50px;
+    margin-left: 600px;
 }
 
 body {
-  text-align: center;
-  display: block;
-  margin: 0 auto;
-  font-size: 16px;
-  color: #999;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    font-size: 16px;
+    color: #999;
 }
 
 h2 {
-  font-family: 'Oswald', sans-serif;
-  font-size: 30px;
-  color: #216182;
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: #216182;
 }
 
-h3{
-  display: inline;
-  margin-right: 10px;
+h3 {
+    display: inline;
+    margin-right: 10px;
 }
 
 form {
-  margin: 0 auto;
-  width: 459px;
+    margin: 0 auto;
+    width: 459px;
 }
 
-input{
-  background-color: #efefef;
-  border-radius: 6px;
-  border: 1px solid #dedede;
-  padding: 10px;
-  margin-top: 3px;
-  font-size: 1.5em;
-  font-family: 'Jeju Gothic', sans-serif;
-  color: #3a3a3a;
+input {
+    background-color: #efefef;
+    border-radius: 6px;
+    border: 1px solid #dedede;
+    padding: 10px;
+    margin-top: 3px;
+    font-size: 1.5em;
+    font-family: 'Jeju Gothic', sans-serif;
+    color: #3a3a3a;
 }
-input:focus{
-  border: 1px solid #97d6eb;
+
+input:focus {
+    border: 1px solid #97d6eb;
 }
 
 #plan_input {
-  width: 440px;
-  height: 25px;
+    width: 440px;
+    height: 25px;
 }
 
-#time_input1, #time_input2{
-  margin-top: 20px;
+#time_input1,
+#time_input2 {
+    margin-top: 20px;
 }
 
-#ampm{
-  display: center;
-  margin:0 auto;
+#alarmtext {
+    margin-top: 30px;
 }
 
-
-#submit_button{
-  float: right;
-  width: 100px;
-  height: 45px;
-  text-align: center;
-  border: none;
-  margin-top: 1px;
-  cursor: pointer;
+#ampm {
+    display: center;
+    margin: 0 auto;
 }
 
-
-#submit_button:hover ,#cancle_button:hover {
-  color: #fff;
-  background-color: #216282;
-  opacity: 0.9;
+#submit_button {
+    float: right;
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    border: none;
+    margin-top: 1px;
+    cursor: pointer;
 }
 
-#date{
-  margin-top: 30px;
+#submit_button:hover,
+#cancle_button:hover {
+    color: #fff;
+    background-color: #216282;
+    opacity: 0.9;
+}
+
+#date {
+    margin-top: 30px;
 }
 
 .modal {
-  position: fixed;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(1.1);
-  transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.1);
+    transition: visibility 0s linear 0.25s, opacity 0.25s 0s, transform 0.25s;
 }
 
 .modal-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 1rem 1.5rem;
-  width: 500px;
-  height: 350px;
-  border-radius: 0.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem 1.5rem;
+    width: 600px;
+    height: 450px;
+    border-radius: 0.5rem;
 }
 
 .close-button {
-  float: right;
-  width: 1.5rem;
-  line-height: 1.5rem;
-  text-align: center;
-  cursor: pointer;
-  border-radius: 0.25rem;
-  background-color: lightgray;
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
 }
 
 .close-button:hover {
-  background-color: darkgray;
+    background-color: darkgray;
 }
 
 .show-modal {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1.0);
-  transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0);
+    transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
-
-
-
 
 .alarm_container {
-  display: block;
-  float: left;
-  width:10px;
-  position: relative;
-  padding-left: 35px;
-  margin-top:2px;
-  margin-bottom: 12px;
-  margin-left: 15px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  font-size: 1.5em;
-  font-family: 'Jeju Gothic', sans-serif;
+    display: block;
+    float: left;
+    width: 10px;
+    position: relative;
+    padding-left: 35px;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    margin-left: 15px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-size: 1.5em;
+    font-family: 'Jeju Gothic', sans-serif;
 }
+
 
 /* Hide the browser's default checkbox */
+
 .alarm_container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
 }
+
 
 /* Create a custom checkbox */
+
 .checkmark {
-  display: flex;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 25px;
-  width: 25px;
-  background-color: #eee;
+    display: flex;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
 }
+
 
 /* On mouse-over, add a grey background color */
-.alarm_container:hover input ~ .checkmark {
-  background-color: #ccc;
+
+.alarm_container:hover input~.checkmark {
+    background-color: #ccc;
 }
+
 
 /* When the checkbox is checked, add a blue background */
-.alarm_container input:checked ~ .checkmark {
-  background-color: #2196F3;
+
+.alarm_container input:checked~.checkmark {
+    background-color: #2196F3;
 }
+
 
 /* Create the checkmark/indicator (hidden when not checked) */
+
 .checkmark:after {
-  content: "";
-  position: absolute;
-  display: none;
+    content: "";
+    position: absolute;
+    display: none;
 }
+
 
 /* Show the checkmark when checked */
-.alarm_container input:checked ~ .checkmark:after {
-  display: block;
+
+.alarm_container input:checked~.checkmark:after {
+    display: block;
 }
 
+
 /* Style the checkmark/indicator */
+
 .alarm_container .checkmark:after {
-  left: 9px;
-  top: 5px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
 }

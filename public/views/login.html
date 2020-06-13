@@ -6,48 +6,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/login_style.css" />
+    <script type="text/javascript" src="https://static.nid.naver.com/js/naveridlogin_js_sdk_2.0.0.js" charset="utf-8"></script>
     <title>vanilaSchedule</title>
 </head>
 
 <body>
-    <div class="wrapper fadeInDown">
-        <div id="formContent">
-            <!-- Tabs Titles -->
-            <h2 class="active" id="signIn_h2" onclick="changeSignIn()"> Sign In </h2>
-            <h2 class="inactive underlineHover" id="signUp_h2" onclick="changeSignUp()">Sign Up </h2>
+    <% if(check=='failpassword'){ %>
 
-            <!-- Sign in Form -->
-            <form id="signInForm" method="post" style="margin:30px;">
-                <input type="text" id="signIn_email" name="signIn_email" class="fadeIn second" placeholder="Email">
-                <input type="text" id="signIn_password" name="signIn_password" class="fadeIn third" placeholder="Password">
-                <input id="signIn_Button" style="margin:30px;" type="submit" class="fadeIn fourth" value="Sign In" formaction="/login/signin">
-            </form>
+        <script>
+            alert("비밀번호를 다시 확인해주세요.");
+        </script>
 
-            <!-- Sign up Form -->
-            <form id="signUpForm" method="post" style="margin:30px; display:none">
-                <!-- input은 name 을 지정해줘야 post로 값이 전달된다 -->
-                <input type="text" id="signUp_email" name="signUp_email" style="display:inline;" class="fadeIn second" placeholder="Email">
-                <input type="text" id="signUp_password" name="signUp_password" class="fadeIn third" placeholder="Password">
-                <input id="signUn_Button" style="margin:30px; width:240px;" type="submit" class="fadeIn fourth" value="Sign Up" formaction="/login/signup">
-                <hr style="width:95%"></hr>
-                <div id="other_signUp">
-                    <div style="margin-top:30px;">
-                        <img src="../img/naver_icon.png"></img>
-                        <input id="naver_Button" type="button" class="fadeIn fourth" value="Naver">
+        <% }else if(check=='failemail'){ %>
+            <script>
+                alert("이메일을 다시 확인해주세요.");
+            </script>
+            <% } else if(check=='stillnotlogin'){ %>
+                <script>
+                    alert("로그인이 필요한 서비스입니다.");
+                </script>
+                <% } %>
+
+                    <div class="wrapper fadeInDown">
+                        <div id="formContent">
+                            <!-- Tabs Titles -->
+                            <h2 class="active" id="signIn_h2" onclick="changeSignIn()"> Sign In </h2>
+                            <h2 class="inactive underlineHover" id="signUp_h2" onclick="changeSignUp()">Sign Up </h2>
+
+                            <!-- Sign in Form -->
+                            <form id="signInForm" method="post" style="margin:30px;">
+                                <input type="text" id="signIn_email" name="signIn_email" class="fadeIn second" placeholder="Email">
+                                <input type="text" id="signIn_password" name="signIn_password" class="fadeIn third" placeholder="Password">
+                                <input id="signIn_Button" style="margin:30px;" type="submit" class="fadeIn fourth" value="Sign In" formaction="/login/signin">
+                                <hr style="width:95%"></hr>
+                                <div id="other_signUp">
+                                    <!-- 네이버 로그인 div -->
+                                    <div id="naverIdLogin" onclick="goNaverLogin();"></div>
+                                    <script>
+                                        var naverLogin = new naver.LoginWithNaverId({
+                                            clientId: "q0fvK38XvbbNCrdCc06i",
+                                            callbackUrl: "http://localhost:3000/login/callback_naver", // 아이디 비번치면 /login/callback_naver 로 이동 => router에 설정되어있음
+                                            isPopup: false,
+                                            callbackHandle: true,
+                                            /* 팝업을 통한 연동처리 여부 */
+                                            loginButton: {
+                                                color: "green",
+                                                type: 3,
+                                                height: 60,
+                                            } /* 로그인 버튼의 타입을 지정 */
+                                        });
+
+                                        /* 설정정보를 초기화하고 연동을 준비 */
+                                        naverLogin.init();
+                                    </script>
+                                </div>
+                            </form>
+
+                            <!-- Sign up Form -->
+                            <form id="signUpForm" method="post" style="margin:30px; display:none">
+                                <!-- input은 name 을 지정해줘야 post로 값이 전달된다 -->
+                                <input type="text" id="signUp_email" name="signUp_email" style="display:inline;" class="fadeIn second" placeholder="Email">
+                                <input type="text" id="signUp_password" name="signUp_password" class="fadeIn third" placeholder="Password">
+                                <input id="signUn_Button" style="margin:30px; width:240px;" type="submit" class="fadeIn fourth" value="Sign Up" formaction="/login/signup">
+                            </form>
+
+                            <!-- Remind Passowrd -->
+                            <div id="formFooter ">
+                                <a class="underlineHover " href="# ">Forgot Password?</a>
+                            </div>
+
+                        </div>
                     </div>
-                    <div>
-                        <img src="../img/facebook_icon.png"></img>
-                        <input id="facebook_Button" type="button" class="fadeIn fourth" value="Facebook">
-                    </div>
-                </div>
-            </form>
-
-            <!-- Remind Passowrd -->
-            <div id="formFooter">
-                <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
-        </div>
-    </div>
-    <script type="text/javascript" src="../js/login_js.js"></script>
+                    <script type="text/javascript " src="../js/login_js.js "></script>
 </body>

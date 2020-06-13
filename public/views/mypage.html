@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/login_style.css" />
+    <title>vanilaSchedule</title>
+  </head>
+
+  <body>
+    <div class="wrapper fadeInDown">
+      <div id="formContent">
+        <h1>정보 수정</h1>
+        <div id="data" style="display: none;">
+          <%= data %>
+        </div>
+        <!-- Sign in Form -->
+        <form id="ModifyForm" method="post" style="margin:30px;">
+          <h2>Email</h2>
+          <input
+            type="text"
+            id="login_email"
+            name="login_email"
+            class="fadeIn
+          second"
+            value=""
+            disabled
+          />
+          <input
+            type="text"
+            id="signIn_password"
+            name="signIn_password"
+            class="fadeIn third"
+            placeholder="Password"
+          />
+          <input
+            id="signIn_Button"
+            style="margin:30px;"
+            type="submit"
+            class="fadeIn fourth"
+            value="Sign In"
+            formaction="/login/signin"
+          />
+        </form>
+
+        <!-- Sign up Form -->
+        <form id="signUpForm" method="post" style="margin:30px; display:none">
+          <!-- input은 name 을 지정해줘야 post로 값이 전달된다 -->
+          <input
+            type="text"
+            id="signUp_email"
+            name="signUp_email"
+            style="display:inline;"
+            class="fadeIn second"
+            placeholder="Email"
+          />
+          <input
+            type="text"
+            id="signUp_password"
+            name="signUp_password"
+            class="fadeIn third"
+            placeholder="Password"
+          />
+          <input
+            id="signUn_Button"
+            style="margin:30px; width:240px;"
+            type="submit"
+            class="fadeIn fourth"
+            value="Sign Up"
+            formaction="/login/signup"
+          />
+        </form>
+
+        <!-- Remind Passowrd -->
+        <div id="formFooter ">
+          <a class="underlineHover " href="# ">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript " src="../js/mypage_js.js "></script>
+  </body>
+</html>

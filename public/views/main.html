@@ -12,8 +12,17 @@
     <div class="home">
         <div class="header">
             <h1>LOGO</h1>
-            <button type="button" id="btn_login" onclick="location.href='/login'">Sign In</button>
-            <button type="button" id="btn_mypage" onclick="location.href='/'">Mypage</button>
+            <%if(user){%>
+
+                <button type="button" id="btn_mypage" onclick="location.href='/mypage'">Mypage</button>
+
+                <%}else{%>
+
+                    <button type="button" id="btn_login" onclick="location.href='/login'">Sign In</button>
+
+                    <%}%>
+                        <!-- <button type="button" id="btn_login" onclick="location.href='/login'">Sign In</button>
+                        <button type="button" id="btn_mypage" onclick="changeBtn_login();">Mypage</button> -->
         </div>
         <div class="main">
             <div class="container">
@@ -29,6 +38,7 @@
             </div>
         </div>
     </div>
+    <script type="text/javascript" src="../js/main_js.js"></script>
 </body>
 
 </html>
