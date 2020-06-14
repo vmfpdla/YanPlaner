@@ -25,7 +25,15 @@
                 <script>
                     alert("로그인이 필요한 서비스입니다.");
                 </script>
-                <% } %>
+                <% } else if(check=='CompleteModify'){%>
+                    <script>
+                        alert("정보를 수정했습니다. 다시 로그인 해주세요.");
+                    </script>
+                    <% } else if(check=='alreadyEmail'){%>
+                        <script>
+                            alert("이미 가입되어있는 이메일 입니다.");
+                        </script>
+                        <% } %>
 
                     <div class="wrapper fadeInDown">
                         <div id="formContent">
@@ -72,7 +80,8 @@
 
                             <!-- Remind Passowrd -->
                             <div id="formFooter ">
-                                <a class="underlineHover " href="# ">Forgot Password?</a>
+                                <a class="underlineHover " onclick="location.href='/findemail'">Forgot Email?</a>
+                                <a class="underlineHover " onclick="location.href='/findpassword'">Forgot Password?</a>
                             </div>
 
                         </div>
