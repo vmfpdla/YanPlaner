@@ -1,6 +1,8 @@
 var express = require("express");
 var router = express.Router();
 var mysqlDB = require("../mysql-db");
+const crypto = require('crypto');
+const nodemailer = require('nodemailer');
 
 //라우터의 get()함수를 이용해 request URL('/')에 대한 업무처리 로직 정의
 router.get("/", function(req, res) {
@@ -10,6 +12,7 @@ router.get("/", function(req, res) {
 });
 
 router.post('/findpassword', (req, res) => {
+  var email = req.body.email; 
   // email 입력 확인
   if (req.body.email === '') {
     res.status(400).send('email required');
@@ -30,42 +33,25 @@ router.post('/findpassword', (req, res) => {
           res.redirect("/forgetpassword");
         } else {
           // 같은 값이 있으면
-          const token = crypto.randomBytes(20).toString('hex'); // token 생성
-    const data = { // 데이터 정리
-      token,
-      userId: user.id,
-      ttl: 300 // ttl 값 설정 (5분)
-    };
+          // const token = crypto.randomBytes(20).toString('hex'); // token 생성
+          // const data = { // 데이터 정리
+          //   token,
+          //   userId: user.id,
+          //   ttl: 300 // ttl 값 설정 (5분)
+          // };
+          let transporter = nodemailer.createTransport({
+            service: 'gmail',
+            auth: {
+              user: 'youremail@gmail.com',  // gmail 계정 아이디를 입력
+              pass: 'yourpassword'          // gmail 계정의 비밀번호를 입력
+            }
+          });
         }
       }
   
 });
 
-// router.post("/modifyProfile", function(req, res, next) {
-//   var password1 = req.body.login_password;
-//   var password2 = req.body.login_password2;
-//   if (password1 == password2) {
-//     var sql =
-//       "UPDATE user SET user_password='" +
-//       password1 +
-//       "' where user_number='" +
-//       req.session.user.number +
-//       "'";
-//     mysqlDB.query(sql, function(err, rows) {
-//       if (err) {
-//         console.log(err);
-//       } else {
-//         console.log(rows);
-//       }
-//       req.session.check = "CompleteModify";
-//       res.redirect("/login");
-//     });
-//   } else {
-//     // 비밀번호 두개가 서로 일치하지 않는 경우
-//     req.session.mypagecheck = "failmodify";
-//     res.redirect("/mypage");
-//   }
-// });
+
 
 //모듈에 등록해야 web.js에서 app.use 함수를 통해서 사용 가능
 module.exports = router;

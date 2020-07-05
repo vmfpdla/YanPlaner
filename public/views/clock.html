@@ -1,90 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="http://fonts.googleapis.com/earlyaccess/jejugothic.css" rel="stylesheet" type="text/css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="http://fonts.googleapis.com/earlyaccess/jejugothic.css"
+      rel="stylesheet"
+      type="text/css"
+    />
     <link rel="stylesheet" href="../css/clock_style.css" />
     <title>vanilaSchedule</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="home">
-        <div class="header">
-            <h1>LOGO</h1>
-            <button type="button" id="mypage_Button" onclick="location.href='login.html'">Mypage</button>
+      <div class="header">
+        <h1>LOGO</h1>
+        <button
+          type="button"
+          id="mypage_Button"
+          onclick="location.href='/mypage'"
+        >
+          MYPAGE
+        </button>
+      </div>
+      <div class="main">
+        <div id="calender">
+          <input type="button" id="calender_button" value="calender" />
         </div>
-        <div class="main">
-            <div id="calender">
-                <input type="button" id="calender_button" value="calender">
-            </div>
-            <div id="data" style="display:none;">
-                <%= data %>
-            </div>
-            <div id="amCanvasDiv" class="clock">
-                <canvas id="amCanvas" width="700" height="700"></canvas>
-            </div>
-            <div id="pmCanvasDiv" class="clock" style="display:none;">
-                <canvas id="pmCanvas" width="700" height="700"></canvas>
-            </div>
-            <div id="ampm">
-                <input type="button" id="am_button" value="AM" onclick="changeAM()">
-                <input type="button" id="pm_button" value="PM" onclick="changePM()">
-            </div>
-            <button class="trigger">+</button>
-            <div>
-                <!-- 팝업 될 레이어 -->
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h2 class="title">일정 만들기</h2>
-                        <form action="" method="GET">
-                            <input type="text" id="plan_input" name="plan_input" placeholder="일정을 입력해주세요." required="required">
-
-                            <h3>시간</h3>
-                            <input type="time" id="time_input1" name="time_input1">
-                            <h3 style="margin-left:10px;">~</h3>
-                            <input type="time" id="time_input2" name="time_input2" style="float:right;">
-
-                            <h3 style="display:block" id="alarmtext">알람</h3>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date1" value="mon"> 월
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date2" value="tue"> 화
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date3" value="wed"> 수
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date4" value="thr"> 목
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date5" value="fri"> 금
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date6" value="sat"> 토
-                <span class="checkmark"></span>
-              </label>
-                            <label class="alarm_container">
-                <input type="checkbox" id="date" name="date7" value="sun"> 일
-                <span class="checkmark"></span>
-              </label>
-
-                            <input type="submit" id="submit_button" value="등록" formaction="/clock/add">
-                        </form>
-                    </div>
-                </div>
-            </div>
+        <div id="data" style="display:none;">
+          <%= data %>
         </div>
+        <div id="amCanvasDiv" class="clock">
+          <canvas id="amCanvas" width="700" height="700"></canvas>
+        </div>
+        <div id="pmCanvasDiv" class="clock" style="display:none;">
+          <canvas id="pmCanvas" width="700" height="700"></canvas>
+        </div>
+        <div id="ampm">
+          <input type="button" id="am_button" value="AM" onclick="changeAM()" />
+          <input type="button" id="pm_button" value="PM" onclick="changePM()" />
+        </div>
+        <button class="trigger">+</button>
+        <div>
+          <!-- 팝업 될 레이어 -->
+          <div class="modal">
+            <div class="modal-content">
+              <span class="close-button">&times;</span>
+              <h2 class="title">일정 만들기</h2>
+              <form action="" method="GET">
+                <input
+                  type="text"
+                  id="plan_input"
+                  name="plan_input"
+                  placeholder="일정을 입력해주세요."
+                  required="required"
+                />
+
+                <h3>시간</h3>
+                <input type="time" id="time_input1" name="time_input1" />
+                <h3 style="margin-left:10px;">~</h3>
+                <input
+                  type="time"
+                  id="time_input2"
+                  name="time_input2"
+                  style="float:right;"
+                />
+
+                <h3 style="display:block" id="alarmtext">알람</h3>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date1" value="mon" />
+                  월
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date2" value="tue" />
+                  화
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date3" value="wed" />
+                  수
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date4" value="thr" />
+                  목
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date5" value="fri" />
+                  금
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date6" value="sat" />
+                  토
+                  <span class="checkmark"></span>
+                </label>
+                <label class="alarm_container">
+                  <input type="checkbox" id="date" name="date7" value="sun" />
+                  일
+                  <span class="checkmark"></span>
+                </label>
+
+                <input
+                  type="submit"
+                  id="submit_button"
+                  value="등록"
+                  formaction="/clock/add"
+                />
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</body>
-<script type="text/javascript" src="../js/clock_js.js"></script>
-
+  </body>
+  <script type="text/javascript" src="../js/clock_js.js"></script>
 </html>
