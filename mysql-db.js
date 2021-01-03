@@ -3,7 +3,7 @@ var connection = mysql.createConnection({
     host: 'localhost',
     post: 3306,
     user: 'root',
-    password: 'ghkdduswn123',
+    password: '',
     database: 'YanPlaner'
 });
 
